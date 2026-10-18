@@ -1,4 +1,8 @@
 function cekApiKey(req, res, next) {
+  if (req.method === "GET") {
+    return next();
+  }
+
   const apiKey = req.headers["x-api-key"];
 
   if (!apiKey || apiKey !== process.env.API_KEY) {

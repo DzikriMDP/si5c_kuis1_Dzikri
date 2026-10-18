@@ -54,6 +54,7 @@ app.get("/", (req, res) => {
 
 app.use(
   "/songs",
+  cekApiKey,
   songRoutes
 );
 
