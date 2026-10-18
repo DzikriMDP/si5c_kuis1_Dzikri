@@ -42,8 +42,12 @@ function getById(id) {
 }
 
 function create(data) {
+  const nextId = songs.length > 0
+    ? Math.max(...songs.map(song => song.id)) + 1
+    : 1;
+
   const newSong = {
-    id: nextId++,
+    id: nextId,
     ...data
   };
 
